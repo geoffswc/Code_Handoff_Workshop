@@ -18,7 +18,7 @@ clf = RandomForestClassifier()
 
 clf.fit( train_data_features, train["category"] )
 
-test = pd.read_csv('data/testReviews.tsv', header=0, delimiter="\t", quoting=3)
+test = pd.read_csv(sys.argv[2], header=0, delimiter="\t", quoting=3)
 
 test_data_features = vectorizer.transform(test['text'])
 
