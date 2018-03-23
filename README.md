@@ -1,5 +1,19 @@
 # Code_Handoff_Workshop
 
+## Overview
+
+This repository contains a script to measure the accuracy of a random forest in binary classification of text documents. and applies the random forest model to predict a lcassification for each entry.
+
+The script reads in a tsv file of training and testing text documents.  Each row in the train and test documents contains an id, the body of the text for each entry, and a binary classification (0 or 1).  
+
+The script breaks the training documents in to a bag of words with a maximum of 5000 features, creates word vectors for the training set, and trains a random forest.  
+
+The script then reads in a testing set and applies the random forest model to predict a lcassification for each entry.
+
+Lastly, the algorithm compares the predictions for the test set to the actual categories and calculates an accuracy metric.  This metric is a simple calculation of the number of correct predictions as a percentage of the total.
+
+Note that all scikit-learn parameters for the random forest are left at the scikit defaults. 
+
 ## Dependencies
 
 Python 3.6+ (built using 3.6.3)

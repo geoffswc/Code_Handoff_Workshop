@@ -26,6 +26,7 @@ binary_predictions = clf.predict(test_data_features)
 
 prediction_list = pd.DataFrame( data={"id":test["id"], "category":test['category'], "prediction":binary_predictions} )
 
-print(1 - (sum(np.absolute(prediction_list['category'] - prediction_list['prediction'])) / 500))
+# calculate accuracy as a percentage of binary predictions that were correct
+print(1 - (sum(np.absolute(prediction_list['category'] - prediction_list['prediction'])) / len(prediction_list['prediction'])))
 
 
